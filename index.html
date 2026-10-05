@@ -1,228 +1,653 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ERAHUB</title>
+<title>ERAHUB — NASA MONO 2</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      background: #f5f7fb;
-      color: #111827;
-      min-height: 100vh;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .container {
-      width: 100%;
-      max-width: 480px;
-      margin: auto;
-      padding: 35px 20px;
-    }
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
 
-    .header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+  min-height: 100vh;
+  color: #fff;
 
-    .logo {
-      width: 75px;
-      height: 75px;
-      border-radius: 22px;
-      background: #111827;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 15px;
-      font-size: 24px;
-      font-weight: 800;
-    }
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 20, 45, 0.25) 0%,
+      rgba(5, 25, 65, 0.60) 48%,
+      rgba(4, 20, 55, 0.97) 100%
+    ),
+    url("background.jpg")
+    center top / cover fixed no-repeat;
+}
 
-    .header h1 {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
 
-    .header p {
-      margin-top: 7px;
-      color: #6b7280;
-      font-size: 14px;
-    }
+/* =========================
+   MAIN CONTAINER
+========================= */
 
-    .menu {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+.container {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 42px 18px 30px;
+}
 
-    .link {
-      text-decoration: none;
-      color: #111827;
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      padding: 17px 18px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      transition: 0.2s;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
-    }
 
-    .link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
+/* =========================
+   HEADER
+========================= */
 
-    .icon {
-      width: 45px;
-      height: 45px;
-      border-radius: 13px;
-      background: #f0f4ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 21px;
-      flex-shrink: 0;
-    }
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
 
-    .text {
-      flex: 1;
-    }
+.logo {
+  width: 74px;
+  height: 74px;
 
-    .text strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 3px;
-    }
+  margin: 0 auto 16px;
 
-    .text span {
-      font-size: 12px;
-      color: #9ca3af;
-    }
+  border-radius: 22px;
 
-    .arrow {
-      font-size: 22px;
-      color: #9ca3af;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    .footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 11px;
-      color: #9ca3af;
-    }
-  </style>
+  background:
+    linear-gradient(
+      145deg,
+      #071b45,
+      #123d83
+    );
+
+  border: 1px solid rgba(255,255,255,.22);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.18);
+
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.header h1 {
+  font-size: 31px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+
+  text-shadow:
+    0 3px 15px rgba(0,0,0,.30);
+}
+
+.subtitle {
+  margin-top: 5px;
+
+  font-size: 13px;
+
+  color: rgba(255,255,255,.78);
+
+  letter-spacing: .2px;
+}
+
+
+/* =========================
+   AREA BADGE
+========================= */
+
+.area {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 15px;
+
+  padding: 9px 15px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,.14);
+
+  border:
+    1px solid rgba(255,255,255,.30);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: .25px;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.12);
+}
+
+.area-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #55a8ff;
+
+  box-shadow:
+    0 0 0 4px rgba(80,160,255,.18);
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+
+/* =========================
+   MENU CARD
+========================= */
+
+.link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  padding: 15px;
+
+  border-radius: 20px;
+
+  text-decoration: none;
+
+  color: #10234c;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.94),
+      rgba(238,246,255,.84)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.72);
+
+  box-shadow:
+    0 12px 32px rgba(0,0,0,.16);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.link:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.22);
+
+  background:
+    rgba(255,255,255,.98);
+}
+
+.link:active {
+  transform: scale(.985);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.icon {
+  width: 50px;
+  height: 50px;
+
+  flex: 0 0 50px;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+
+  background:
+    rgba(255,255,255,.75);
+
+  border:
+    1px solid rgba(20,70,140,.08);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.text strong {
+  display: block;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  margin-bottom: 4px;
+
+  color: #10234c;
+}
+
+.text span {
+  display: block;
+
+  font-size: 11.5px;
+
+  line-height: 1.4;
+
+  color: #637392;
+}
+
+
+/* =========================
+   ARROW
+========================= */
+
+.arrow {
+  width: 32px;
+  height: 32px;
+
+  flex: 0 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(20,76,160,.08);
+
+  color: #45628d;
+
+  font-size: 23px;
+
+  transition: .2s;
+}
+
+.link:hover .arrow {
+  background: #1769d1;
+  color: #fff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  text-align: center;
+
+  margin-top: 30px;
+
+  padding-bottom: 8px;
+
+  color: rgba(255,255,255,.72);
+}
+
+.footer-main {
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: .5px;
+}
+
+.footer-sub {
+  margin-top: 5px;
+
+  font-size: 10px;
+
+  color: rgba(255,255,255,.52);
+
+  letter-spacing: .4px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  body {
+    background-attachment: scroll;
+  }
+
+  .container {
+    padding:
+      34px
+      15px
+      24px;
+  }
+
+  .header {
+    margin-bottom: 25px;
+  }
+
+  .logo {
+    width: 68px;
+    height: 68px;
+
+    border-radius: 20px;
+
+    font-size: 21px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .area {
+    font-size: 10px;
+
+    padding:
+      8px
+      12px;
+  }
+
+  .link {
+    padding: 14px;
+
+    border-radius: 17px;
+  }
+
+  .icon {
+    width: 46px;
+    height: 46px;
+
+    flex-basis: 46px;
+
+    border-radius: 14px;
+
+    font-size: 21px;
+  }
+
+  .text strong {
+    font-size: 14px;
+  }
+
+  .text span {
+    font-size: 10.5px;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+
+    flex-basis: 30px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL SCREEN
+========================= */
+
+@media (max-width: 360px) {
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .link {
+    gap: 11px;
+  }
+
+  .text span {
+    font-size: 10px;
+  }
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <!-- HEADER -->
-    <div class="header">
 
-      <div class="logo">
-        EH
-      </div>
+  <!-- =====================
+       HEADER
+  ====================== -->
 
-      <h1>ERAHUB</h1>
+  <div class="header">
 
-      <p>Your Retail Digital Hub</p>
-
+    <div class="logo">
+      EH
     </div>
 
+    <h1>ERAHUB</h1>
 
-    <!-- MENU -->
-    <div class="menu">
-
-      <!-- 1. FINDER STOCK -->
-      <a class="link"
-         href="http://finderstock.erahub.my.id/"
-         target="_blank">
-
-        <div class="icon">📦</div>
-
-        <div class="text">
-          <strong>Finder Stock</strong>
-          <span>Cek stock antar store</span>
-        </div>
-
-        <div class="arrow">›</div>
-
-      </a>
-
-
-      <!-- 2. CEKLIST LEADER -->
-      <a class="link"
-         href="https://dcl.erahub.my.id/"
-         target="_blank">
-
-        <div class="icon">📝</div>
-
-        <div class="text">
-          <strong>Ceklist Leader</strong>
-          <span>Monitoring & checklist leader</span>
-        </div>
-
-        <div class="arrow">›</div>
-
-      </a>
-
-
-      <!-- 3. KALKULATOR -->
-      <a class="link"
-         href="https://kalkulator.erahub.my.id/"
-         target="_blank">
-
-        <div class="icon">🧮</div>
-
-        <div class="text">
-          <strong>Kalkulator</strong>
-          <span>Tools kalkulator</span>
-        </div>
-
-        <div class="arrow">›</div>
-
-      </a>
-
-
-      <!-- 4. DASHBOARD -->
-      <a class="link"
-         href="https://dashboard.erahub.my.id/"
-         target="_blank">
-
-        <div class="icon">📊</div>
-
-        <div class="text">
-          <strong>Dashboard</strong>
-          <span>Monitoring performance sales</span>
-        </div>
-
-        <div class="arrow">›</div>
-
-      </a>
-
+    <div class="subtitle">
+      Digital Tools for Retail
     </div>
 
-
-    <!-- FOOTER -->
-    <div class="footer">
-      © 2026 ERAHUB
+    <div class="area">
+      <span class="area-dot"></span>
+      NASA MONO 2
+      <span>•</span>
+      JAKTIM — BEKASI
     </div>
 
   </div>
 
+
+  <!-- =====================
+       MENU
+  ====================== -->
+
+  <div class="menu">
+
+
+    <!-- FINDER STOCK -->
+
+    <a
+      class="link"
+      href="https://finderstock.erahub.my.id/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <div class="icon">
+        📦
+      </div>
+
+      <div class="text">
+
+        <strong>
+          Finder Stock
+        </strong>
+
+        <span>
+          Cek stock antar store
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- CEKLIST LEADER -->
+
+    <a
+      class="link"
+      href="https://dcl.erahub.my.id/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <div class="icon">
+        📝
+      </div>
+
+      <div class="text">
+
+        <strong>
+          Ceklist Leader
+        </strong>
+
+        <span>
+          Monitoring & checklist leader
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- KALKULATOR -->
+
+    <a
+      class="link"
+      href="https://kalkulator.erahub.my.id/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <div class="icon">
+        🧮
+      </div>
+
+      <div class="text">
+
+        <strong>
+          Kalkulator
+        </strong>
+
+        <span>
+          Tools kalkulasi sales
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+    <!-- DASHBOARD -->
+
+    <a
+      class="link"
+      href="https://dashboard.erahub.my.id/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <div class="icon">
+        📊
+      </div>
+
+      <div class="text">
+
+        <strong>
+          Dashboard
+        </strong>
+
+        <span>
+          Monitoring performance sales
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ›
+      </div>
+
+    </a>
+
+
+  </div>
+
+
+  <!-- =====================
+       FOOTER
+  ====================== -->
+
+  <div class="footer">
+
+    <div class="footer-main">
+      ERAHUB • NASA MONO 2
+    </div>
+
+    <div class="footer-sub">
+      JAKTIM — BEKASI • 2026
+    </div>
+
+  </div>
+
+
+</div>
+
 </body>
 </html>
-```
